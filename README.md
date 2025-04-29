@@ -40,4 +40,6 @@ pip install -r requirements.txt
 
 3. **Run the script**
  ```bash
-```python insta_scrape.py
+python insta_scrape.py
+```
+
