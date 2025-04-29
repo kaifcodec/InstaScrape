@@ -21,7 +21,8 @@ Ever wanted to grab all the comments on your favorite Instagram Reels, but found
 To run InstaScrape, you’ll need:
 
 - **Python 3.x**
-- **Requests module**: Install it using `pip install requests`.
+- **Requests module**: `requests`
+- **tqdm module** : `tqdm`
 - **A set of cookies** from your Instagram session.
 
 ---
@@ -33,3 +34,10 @@ To run InstaScrape, you’ll need:
 ```bash
 git clone https://github.com/yourusername/instascrape.git
 cd instascrape
+pip install -r requirements.txt
+```
+2. After getting your respective cookies, add them in the `cookie_example.py` accordingly and rename it to `cookie.py`
+
+3. **Run the script**
+ ```bash
+```python insta_scrape.py
