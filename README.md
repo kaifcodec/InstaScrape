@@ -32,7 +32,7 @@ To run InstaScrape, you’ll need:
 1. **Clone the repo**:
 
 ```bash
-git clone https://github.com/yourusername/instascrape.git
+git clone https://github.com/kaifcodec/instascrape.git
 cd instascrape
 pip install -r requirements.txt
 ```
