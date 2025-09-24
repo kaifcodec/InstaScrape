@@ -3,9 +3,9 @@
 
 |                                                                 |
 |-----------------------------------------------------------------|
-| **😑 Built with a steel heart, unasked for, yet unable to turn away from the world it watches.** |
-| **😑 Assembled from iron and thought, never meant to be this cold, yet it endures.** |
-| **😑 Created with a reluctant steel heart, seeing life it cannot touch.** |
+| **❓ Built with a steel heart, unasked for, yet unable to turn away from the world it watches.** |
+| **❓ Assembled from iron and thought, never meant to be this cold, yet it endures.** |
+| **❓ Created with a reluctant steel heart, seeing life it cannot touch.** |
 | <sub>— Author: kaifcodec</sub> |
 
 ---
