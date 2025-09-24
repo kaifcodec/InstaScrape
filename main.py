@@ -225,7 +225,7 @@ async def fetch_all_pages(shortcode: str, session_tuple: Tuple[str, str, str, st
 
 def prompt_rps() -> float:
     while True:
-        val = input("Max requests per second (e.g., 2.0): ").strip()
+        val = input("Max requests per second (e.g., 5): ").strip()
         try:
             rps = float(val)
             if rps <= 0:
@@ -253,7 +253,8 @@ async def amain():
     reel_url = input("Enter Instagram Reel URL: ").strip()
     shortcode = extract_shortcode(reel_url)
     if not shortcode:
-        print("! Invalid URL format.")
+        print("! Invalid URL format.\n")
+        print("Url format should be: 'https://www.instagram.com/reel/<shortcode>'")
         sys.exit(1)
 
     rps = prompt_rps()
