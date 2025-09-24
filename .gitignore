@@ -1,2 +1,3 @@
 __pycache__
-cookie.py
+cookie.json
+.env
