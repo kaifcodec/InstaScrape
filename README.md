@@ -12,7 +12,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/kaifcodec/instascrape?style=social)](https://github.com/kaifcodec/instascrape/stargazers)
+<!---[![GitHub stars](https://img.shields.io/github/stars/kaifcodec/instascrape?style=social)](https://github.com/kaifcodec/instascrape/stargazers) --->
 
 Scrape **all parent comments** from any Instagram Reel with **automated login**, **async speed**, **real-time progress**, and **clean exports** — no manual cookie copying required.
 
