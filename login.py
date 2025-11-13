@@ -24,7 +24,6 @@ FB_HTTP_ENGINE = "Liger"
 
 COOKIE_JSON_PATH = "cookie.json"
 
-# ---------- Utilities ----------
 
 def generate_uuid(return_hex: bool = False, seed: Optional[str] = None) -> str:
     if seed:
@@ -84,7 +83,6 @@ def get_cookie_value(jar: requests.cookies.RequestsCookieJar, key: str, domain: 
             return c.value
     return None
 
-# ---------- Cookie JSON Helpers ----------
 
 def write_cookie_json(sessionid: str, csrftoken: str, mid: str, ds_user_id: str,
                       per_cookie_expiry: Optional[Dict[str, Optional[int]]] = None) -> None:
@@ -96,7 +94,7 @@ def write_cookie_json(sessionid: str, csrftoken: str, mid: str, ds_user_id: str,
         v = per_cookie_expiry.get(k)
         if isinstance(v, int) and v > now:
             expiries.append(v)
-    # Fallback: 25 days, typically less than some official cookie lifetimes but safe
+            
     overall_expiry = min(expiries) if expiries else now + 25 * 24 * 60 * 60
 
     data = {
@@ -133,8 +131,6 @@ def cookie_json_valid(d: Optional[Dict[str, Any]]) -> bool:
     c = (d.get("cookies") or {})
     required_ok = all(k in c and isinstance(c.get(k), str) and c.get(k) for k in ("sessionid", "csrftoken", "mid", "ds_user_id"))
     return bool(required_ok and isinstance(overall, int) and overall > now)
-
-# ---------- Login Core ----------
 
 class LoginError(Exception):
     pass
@@ -180,13 +176,11 @@ def login_instagram(username: str, password: str, timeout_prelogin: int = 10, ti
     except requests.RequestException as e:
         raise LoginError(f"Network error during login: {e}")
 
-    # Attempt JSON parse, but tolerate non-JSON
     try:
         j = r.json()
     except Exception:
         j = {"status": "unknown", "text": r.text}
 
-    # Detect common error states
     if r.status_code != 200:
         raise LoginError(f"HTTP {r.status_code} during login: {j}")
 
@@ -202,7 +196,6 @@ def login_instagram(username: str, password: str, timeout_prelogin: int = 10, ti
     if not j.get("logged_in_user", {}).get("pk"):
         raise LoginError(f"Unable to login: {j}")
 
-    # Extract cookies
     sessionid = get_cookie_value(s.cookies, "sessionid", domain="instagram.com")
     csrftoken = get_cookie_value(s.cookies, "csrftoken", domain="instagram.com")
     mid = get_cookie_value(s.cookies, "mid", domain="instagram.com")
@@ -213,7 +206,6 @@ def login_instagram(username: str, password: str, timeout_prelogin: int = 10, ti
 
     return (sessionid, csrftoken, mid, dsuserid)
 
-# ---------- CLI ----------
 
 def main():
     ap = argparse.ArgumentParser(description="Instagram app login and dump cookies (standalone)")
