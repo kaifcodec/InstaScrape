@@ -83,5 +83,5 @@ Example JSON structure:
 ---
 
 ### ⚠️ Disclaimer
-Use responsibly. Comply with Instagram’s Terms of Service. Intended for personal or permitted use only.
-
+- Use responsibly. Comply with Instagram’s Terms of Service. Intended for personal or permitted use only.
+- Never use your personal account during login, always try to use a dummy account 
